@@ -100,7 +100,8 @@ The docker image supports anonymous volumes, named volumes or bind mounts.
 
 *  Default behavior is anonymous volume.  When you issue the docker run command it will create an anonymous volume which can be seen in a ```docker volume ls``` command. When -v option is NOT used on the docker run command.
 * Named volumes can be used, use the -v option and follow these instructions:
-```
+
+```shell
 Create a named  volume:
    docker volume create ifx-vol
 
@@ -113,7 +114,8 @@ Use The named volume:
 * ```-v ifx-vol:/opt/ibm/data``` This option mounts a named volume __(ifx-vol)__ to a pre-defined internal volume __(/opt/ibm/data)__   For more information on the named volume see the ```docker volume``` command. 
 
 * Bind mounts can be used, use the -v option and follow these instructions:
-```
+
+```shell
 Create a mount point on the host system:
    Example:  mkdir /home/informix/extvol
 
@@ -136,7 +138,7 @@ Use The Bind mount:
 
 * ```User Supplied sqlhosts``` When __-v__ option is used, you can specify an __sqlhosts__ to be used. Place a file named ```sqlhosts``` in the external storage volume directory on the host. Below is a sample sqlhosts file.  Create sqlhosts file with __${HOSTNAME}__ and __${INFORMIXSERVER}__ which are populated during setup, with any other changes you need to the sqlhosts file. 
 
-```
+```shell
 ############################################################
 ### DO NOT MODIFY THIS COMMENT SECTION " 
 ### HOST NAME = ${HOSTNAME} 
@@ -206,7 +208,8 @@ There are 3 sections.
 * [ADD] - Adds the specified parameter
 
 Sample __informix_config.custom__
-```
+
+```shell
 [UPDATE]
 AUTO_TUNE 1
 DIRECT_IO 1
