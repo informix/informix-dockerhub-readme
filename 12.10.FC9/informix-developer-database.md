@@ -4,7 +4,7 @@
 
 ## What is  IBM Informix Developer Edition ?
 
-```IBM Informix Developer Edition```  is `free` database software for application development and prototyping.  IBM® Informix® is a secure embeddable database, optimized for OLTP, IoT and is forging new frontiers with its unique ability to seamlessly integrate SQL, NoSQL/JSON, time series and spatial data. Reliability, flexibility and ease of use lets you focus on building applications.
+```IBM Informix Developer Edition```  is **free** database software for application development and prototyping.  IBM® Informix® is a secure embeddable database, optimized for OLTP, IoT and is forging new frontiers with its unique ability to seamlessly integrate SQL, NoSQL/JSON, time series and spatial data. Reliability, flexibility and ease of use lets you focus on building applications.
 
 
 Informix Developer Edition provides the following: 
