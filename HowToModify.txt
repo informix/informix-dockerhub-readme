@@ -1,0 +1,9 @@
+
+
+Each Server Directory will have two *.md files.  1 for developer edition and another for innovator-c.
+
+
+These two files are almost identical except for some edition differences.
+
+
+
