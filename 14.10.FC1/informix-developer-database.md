@@ -19,10 +19,10 @@ Informix Developer Edition provides the following:
 
 ## Supported tags
 
-*  [latest](http://github.com/informix/informix-dockerhub-readme/14.10.FC1/informix-developer-database.md), 
-[14.10.FC1D1](http://github.com/informix/informix-dockerhub-readme/14.10.FC1/informix-developer-database.md),
-[12.10.UC12W1DE](http://github.com/informix/informix-dockerhub-readme/12.10.FC12/informix-developer-database.md),
-[12.10.UC11DE](http://github.com/informix/informix-dockerhub-readme/12.10.FC9/informix-developer-database.md)
+*  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-developer-database.md), 
+[14.10.FC1D1](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-developer-database.md),
+[12.10.UC12W1DE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC12/informix-developer-database.md),
+[12.10.UC11DE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-developer-database.md)
 
 
 ## **How to use this image** ?
