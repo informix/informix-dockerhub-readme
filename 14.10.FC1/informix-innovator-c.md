@@ -17,7 +17,7 @@ The Informix Innovator-C Edition on Dockerhub however is not designed for produc
 
 ### Supported tags
 
-*  [latest](http://github.com/informix/informimx-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md), 
+*  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md), 
 [14.10.FC1IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
 [12.10.UC12W1IE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC12/informix-innovator-c.md),
 [12.10.UC11IE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md)
