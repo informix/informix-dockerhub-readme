@@ -44,7 +44,8 @@ If you have requirements that exceed these you can use the __Github__ [Dockerfil
 5 - Storage options
 6 - ONCONFIG options
 7 - Options
-8 - Example docker run commands
+8 - Create self contained Test system 
+9 - Example docker run commands
 ```
 
 ## 1 - Starting an Informix Docker Container for the First time.
@@ -106,7 +107,7 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
 ```shell
      docker run --name ifx -v ifx-vol:/opt/ibm/data \
           -p 9088:9088 -p 9089:9089 -p 27017:27017  \
-          -p 27018:27018 -p 27883:27883  informix-db
+          -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
 
 ### Bind Mount
@@ -125,7 +126,7 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
 ```shell
      docker run --name ifx -v /home/informix/extvol:/opt/ibm/data \
           -p 9088:9088 -p 9089:9089 -p 27017:27017        \
-          -p 27018:27018 -p 27883:27883  informix-db
+          -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
 
 ### Local Storage 
@@ -141,7 +142,7 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
 ```shell
      docker run --name ifx -e LOCAL=true \
           -p 9088:9088 -p 9089:9089 -p 27017:27017        \
-          -p 27018:27018 -p 27883:27883  informix-db
+          -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
 
 
@@ -228,8 +229,45 @@ BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
 * ```-td``` If you use the -td option instead of ```-it``` option, the container will be started and you will not be placed inside a shell.  So you have to attach to the container to perform basic Informix operations.  This is the __RECOMMENDED__ over the ```-it``` option. 
 
 
+## 8 - Create Self contained Test system: 
 
-## 8 - Example docker run commands:
+* If you have a need to create a self contained image.  An image that will store your database(s)/table(s) inside the container.  An image that you can modify the dbspaces/chunks and store all this inside the container.
+
+* This is essentially a test system with data already placed inside it.  This can be done easily with the following steps:
+
+#### 1.  Start an image using the -e LOCAL=true
+
+```shell
+      docker run --name ifx -e LOCAL=true            \
+            -p 9088:9088 -p 9089:9089 -p 27017:27017 \
+            -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
+```
+
+#### 2.  Create databases/tables.  Modify chunks/dbspaces, etc.
+
+#### 3.  Bring the Informix instance offline.  Within the Container run:
+
+```shell
+      onmode -ky
+```
+
+#### 4.  Commit the container to a new image.  On the host run:
+
+```shell
+            docker commit ifx ifx-test:v1 
+```
+
+* Now you have a new __Docker image__ named ifx-test:v1 that you can run that will contain your databases/tables, chunk/dbspace layout all stored inside the container.  To run this you would run the following:
+
+```shell
+      docker run --name ifx                          \
+            -p 9088:9088 -p 9089:9089 -p 27017:27017 \
+            -p 27018:27018 -p 27883:27883 ifx-test:v1
+```
+
+
+
+## 9 - Example docker run commands:
 
 * Default run command with no additional options.  This method stores the Informix dbspaces in an unnamed volume.
 
