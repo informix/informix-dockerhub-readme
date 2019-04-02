@@ -126,6 +126,23 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
           -p 27018:27018 -p 27883:27883  informix-db
 ```
 
+### Local Storage 
+
+* You may have a need to store data inside the container.  This is usually a specific use case.  Since containers are ephemeral when you issue a docker run any data you added to the container will be gone.
+
+* ```-e LOCAL=true``` This option will make the container use local storage. 
+
+* There is another use case of __local storage__ and that is to create a container.  Then Modify the container as needed.  Add database/tables, modify chunks/dbspaces.  Then __commit__ that container to a new image and use the newly committed image as your test system.
+
+#### Run with local storage 
+
+```shell
+     docker run --name ifx -e LOCAL=true \
+          -p 9088:9088 -p 9089:9089 -p 27017:27017        \
+          -p 27018:27018 -p 27883:27883  informix-db
+```
+
+
 
 ## 6 - ONCONFIG/Configuration Options: 
 
