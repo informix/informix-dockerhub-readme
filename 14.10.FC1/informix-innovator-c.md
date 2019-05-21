@@ -30,7 +30,7 @@ In order to use the image, it is necessary to accept the terms of the Informix I
 
 This docker image contains pre-deployed Informix Innovator-C Edition.  The docker images we have stored on __Dockerhub__ are not intended for production purposes and may be have specific functionality removed from the installation directory.
 
-If you have requirements that exceed these you can use the __Github__ [Dockerfiles Repo](https://github.com/informix/informix-dockerifiles) to build your own Docker image.
+If you have requirements that exceed these you can use the __Github__ [Dockerfiles Repo](https://github.com/informix/informix-dockerfiles) to build your own Docker image.
 
 
 ## Table of Conents
