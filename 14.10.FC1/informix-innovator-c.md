@@ -215,6 +215,12 @@ BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
 *  ```-p```,  expose port ```27883``` to allow remote connections from MQTT clients
 *  ```--privileged```,  allows Informix Server in Docker Engine to manage kernel configuration
 
+### Sizing Options:
+
+* ```-e TYPE=[oltp|dss|hybrid]``` will configure your Informix server accordingly.  Your informix server will be configured to use all available resources given to the container.  So to limit the amount of cpu and memory used for a given container it is specified on the docker run command.  Type of oltp will use more memory for your bufferpool.  Type of dss will use more memory for shmvirt and a type of hybrid will be be 50/50.
+
+* ```-e SIZE=[small|medium|large|custom ]``` will configure your Informix server based on size. This will impact the shared memory used as well dbspace creation.
+
 ### LICENSE option
 
 * By specifying ```-e LICENSE=accept``` parameter, you are accepting this [License](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/4BBCF42D722EB70685257D8F007B6A44?OpenDocument)  to use the software contained in this image.

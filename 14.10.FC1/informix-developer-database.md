@@ -32,7 +32,7 @@ In order to use the image, it is necessary to accept the terms of the Informix D
 
 This docker image contains pre-deployed Informix Developer Edition.  The docker images we have stored on __Dockerhub__ are not intended for production purposes and may be have specific functionality removed from the installation directory.
 
-If you have requirements that exceed these you can use the __Github__ [Dockerfiles Repo](https://github.com/informix/informix-dockerifiles) to build your own Docker image.
+If you have requirements that exceed these you can use the __Github__ [Dockerfiles Repo](https://github.com/informix/informix-dockerfiles) to build your own Docker image.
 
 
 ## Table of Conents
@@ -216,6 +216,12 @@ BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
 *  ```-p```,  expose port ```27018``` to allow remote connections from REST clients
 *  ```-p```,  expose port ```27883``` to allow remote connections from MQTT clients
 *  ```--privileged```,  allows Informix Server in Docker Engine to manage kernel configuration
+
+### Sizing Options:
+
+* ```-e TYPE=[oltp|dss|hybrid]``` will configure your Informix server accordingly.  Your informix server will be configured to use all available resources given to the container.  So to limit the amount of cpu and memory used for a given container it is specified on the docker run command.  Type of oltp will use more memory for your bufferpool.  Type of dss will use more memory for shmvirt and a type of hybrid will be be 50/50.
+
+* ```-e SIZE=[small|medium|large|custom ]``` will configure your Informix server based on size. This will impact the shared memory used as well dbspace creation.
 
 ### LICENSE option
 
