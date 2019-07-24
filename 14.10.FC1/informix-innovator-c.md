@@ -1,4 +1,4 @@
-### What is  IBM Informix Innovator-C ?
+# What is  IBM Informix Innovator-C ?
 
 ```IBM Informix Innovator-C```  eliminates the up-front licensing costs of developing popular database functionality for use in production (redistribution requires a separate license). The Innovator-C Edition is available on Linux, Windows and Mac platforms and is limited to one core and 2 GB of memory.
 
@@ -15,7 +15,7 @@ The Informix Innovator-C Edition on Dockerhub however is not designed for produc
 >[IBM Elite Support](http://www-01.ibm.com/support/docview.wss?rs=630&uid=swg21431136)
 
 
-### Supported tags
+## Supported tags & Documentation
 
 *  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md), 
 [14.10.FC1IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
