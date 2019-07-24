@@ -279,6 +279,13 @@ To use  ```user supplied configuration files``` you must use a bind mount and mo
 
 ### 3.  Follow the rest of the steps from OPTION 1 for a Custom System 
 
+### 4.  Notes to understand when creating a self contained system.
+
+* There is a default environment script at /usr/local/bin/informix_inf.env.  
+* For Data storage it is important to understand the /opt/ibm/data is a mounted volume.  That could be bind mount, anonymous volume or named volume.
+* If you want to store data inside the container, make a directory /opt/ibm/localdata and store files and chunks here.
+
+
 ## 9 - Example docker run commands:
 
 * Default run command with no additional options.  This method stores the Informix dbspaces in an unnamed volume.
