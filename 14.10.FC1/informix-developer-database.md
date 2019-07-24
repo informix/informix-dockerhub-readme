@@ -17,7 +17,7 @@ Informix Developer Edition provides the following:
 
 >[IBM Informix Documentation](https://www.ibm.com/support/knowledgecenter/SSGU8G_12.1.0/com.ibm.welcome.doc/welcome.htm)
 
-## Supported tags
+## Supported tags & Documentation
 
 *  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-developer-database.md), 
 [14.10.FC1DE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-developer-database.md),
@@ -51,7 +51,7 @@ If you have requirements that exceed these you can use the __Github__ [Dockerfil
 ## 1 - Starting an Informix Docker Container for the First time.
 
 ```shell
-docker run -it --name ifx --privileged -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 \
+docker run -it --name ifx -h ifx--privileged -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 \
 -p 27883:27883 -e LICENSE=accept ibmcom/informix-developer-database:latest
 ```
 
@@ -105,7 +105,7 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
 ```
 #### Run with a named volume
 ```shell
-     docker run --name ifx -v ifx-vol:/opt/ibm/data \
+     docker run --name ifx -h ifx -v ifx-vol:/opt/ibm/data \
           -p 9088:9088 -p 9089:9089 -p 27017:27017  \
           -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
@@ -124,7 +124,7 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
 #### Run with bind mount 
 
 ```shell
-     docker run --name ifx -v /home/informix/extvol:/opt/ibm/data \
+     docker run --name ifx -h ifx -v /home/informix/extvol:/opt/ibm/data \
           -p 9088:9088 -p 9089:9089 -p 27017:27017        \
           -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
@@ -133,76 +133,63 @@ The docker image supports __anonymous volumes__, __named volumes__ and __bind mo
 
 * You may have a need to store data inside the container.  This is usually a specific use case.  Since containers are ephemeral when you issue a docker run any data you added to the container will be gone.
 
-* ```-e LOCAL=true``` This option will make the container use local storage. 
+* ```-e STORAGE=local``` This option will make the container use local storage. 
 
-* There is another use case of __local storage__ and that is to create a container.  Then Modify the container as needed.  Add database/tables, modify chunks/dbspaces.  Then __commit__ that container to a new image and use the newly committed image as your test system.
+* A use case of __local storage__ is to create a container then modify the container as needed.  Add database/tables, modify chunks/dbspaces.  Then __commit__ that container to a new image and use the newly committed image as your test system.
 
 #### Run with local storage 
 
 ```shell
-     docker run --name ifx -e LOCAL=true \
+     docker run --name ifx -h ifx -e STORAGE=local\
           -p 9088:9088 -p 9089:9089 -p 27017:27017        \
           -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
 
 
 
-## 6 - ONCONFIG/Configuration Options: 
+## 6 - User supplied Configuration Options: 
 
-### User Supplied ONCONFIG/Configuration
+To use  ```user supplied configuration files``` you must use a bind mount and mount the __/opt/ibm/config__ volume then you specify each file that will be user supplied. This volume is used specifically for configuration files and will not be used for storage of informix dbspaces and chunks.  On the ```docker run``` command you would add the following:
 
-*  ```User supplied files``` require a bind mount point with the -v option so you can place files onto the host before starting/running a docker container.  The rest of the options in this section (User supplied ONCONFIG/Configuration) require the -v option.
-
-* ```User Supplied ONCONFIG``` You can specify an __ONCONFIG__ to be used. Place a file named ```onconfig``` in the external storage volume directory on the host. 
-
-* ```User Supplied sqlhosts``` You can specify an __sqlhosts__ to be used. Place a file named ```sqlhosts``` in the external storage volume directory on the host. Below is a sample sqlhosts file.  Create sqlhosts file with __${HOSTNAME}__ and __${INFORMIXSERVER}__ which are populated during setup, with any other changes you need to the sqlhosts file. 
-
-```shell
-############################################################
-### DO NOT MODIFY THIS COMMENT SECTION " 
-### HOST NAME = ${HOSTNAME} 
-############################################################
-${INFORMIXSERVER}        onsoctcp        ${HOSTNAME}         9088
-${INFORMIXSERVER}_dr     drsoctcp        ${HOSTNAME}         9089
+``` 
+      -v /home1/setupvol:/opt/ibm/config 
 ```
 
-* ```sch_init``` When __-e SIZE=custom__ option is used, you can specify a file that will run and perform any configuration, creation of databases, etc. Place a file named ```sch_init_informix.custom.sql``` in the external storage volume directory on the host. 
-
-* ```Update ONCONFIG``` When __-e SIZE=custom__ option is used, you can specify a file that will update the __ONCONFIG__ . Place a file named ```informix_config.custom``` in the external storage volume directory on the host. 
+### User Supplied Files 
 
 
-There are 3 sections. 
-* [UPDATE] - Updates parameters found in the $ONCONFIG file accordingly
-* [DELETE] - Deletes any parameters matching the string
-* [ADD] - Adds the specified parameter
+* ```User Supplied ONCONFIG``` You can specify an __ONCONFIG__ file to be used by placing the file in hosts directory that is mounted to the __config volume__.  In the example above it would be __/home1/setupvol__.  Use the -e option to specify the file name.
 
-Sample __informix_config.custom__
-```shell
-[UPDATE]
-AUTO_TUNE 1
-DIRECT_IO 1
-DUMPSHMEM 0
-
-[DELETE]
-BUFFERPOOL
-
-[ADD]
-BUFFERPOOL size=2k,buffers=50000,lrus=8,lru_min_dirty=55,lru_max_dirty=65
 ```
+      -e ONCONFIG_FILE=onconfig 
+``` 
 
-### Override ONCONFIG params
+* ```User Supplied SQLHOSTS ``` You can specify an __sqlhosts__ file to be used by placing the file in hosts directory that is mounted to the __config volume__.  In the example above it would be __/home1/setupvol__.  Use the -e option to specify the file name.
 
-* ```Override ONCONFIG Parameters``` When __-e ENVFILE=1 --env_file=config.env__ option is used, you can override parameters in the  __ONCONFIG__ .  Create a file with parameters listed out as follows:
-You have the ability to ADD, DEL and MOD a parmeter.  If you have parameter that has multiple entries.  To change it, it is best to DEL the parameter first. (Deletes all entries)  Then add the entries you want.
+```
+      -e SQLHOSTS_FILE=sqlhosts
+``` 
 
-Sample __config.env__
-```shell
-NETTYPE=ADD:soctcp,4,200,CPU
-RESIDENT=MOD:1
-BUFFERPOOL=DEL
-BUFFERPOOL=ADD:size=2k,buffers=250000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
-BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
-````
+* ```User Supplied sch_init_xxxxx.sql``` You can specify an __sch_init_xxxxx.sql__ file to be used by placing the file in hosts directory that is mounted to the __config volume__.  In the example above it would be __/home1/setupvol__.  This file is used during startup to perform additional initialization options.  ex.  creation of dbspaces, databases, etc.  Use the -e option to specify the file name.
+
+```
+      -e INIT_FILE=my_init.sql
+``` 
+
+* ```User Supplied Shell scripts``` You can specify an __PRE_INIT__ and __POST_INIT__ shell script to be executed.  These execute prior to the Informix server being disk initialized and after the disk initialization.  Place these files in the hosts directory that is mounted to the __config volume__.  In the example above it would be __/home1/setupvol__.  Make sure the shell scripts have execute permission on them.  
+
+```
+      -e RUN_FILE_PRE_INIT=my_pre.sh
+      -e RUN_FILE_POST_INIT=my_post.sh
+``` 
+
+* ```User Supplied Shell script``` To control __Disk initialization__.  This option allows you to specify a shell script to be used to do all configuration.  The docker container will not perform disk initialization or setup. Place this file in the hosts directory that is mounted to the __config volume__.  In the example above it would be __/home1/setupvol__.  Make sure the shell script have execute permission on them.  
+
+```
+      -e CONFIGURE_INIT=my_pre.sh
+``` 
+
+
 
 
 ## 7 - Options
@@ -221,7 +208,12 @@ BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
 
 * ```-e TYPE=[oltp|dss|hybrid]``` will configure your Informix server accordingly.  Your informix server will be configured to use all available resources given to the container.  So to limit the amount of cpu and memory used for a given container it is specified on the docker run command.  Type of oltp will use more memory for your bufferpool.  Type of dss will use more memory for shmvirt and a type of hybrid will be be 50/50.
 
-* ```-e SIZE=[small|medium|large|custom ]``` will configure your Informix server based on size. This will impact the shared memory used as well dbspace creation.
+* ```-e SIZE=[small|medium|large]``` will configure your Informix server based on size. This will impact the shared memory used as well dbspace creation.
+
+### INITIALIZATION:
+
+* ```-e CONFIGURE_INIT=no``` This is a variable that has two purposes.  As mentioned previously it is used bypass all setup/ininitialization and  run a shell script to perform your own setup.  If you merely want to skip setup/initialization you can set this parameter to no.  Then attach to the container and configure as needed.
+
 
 ### LICENSE option
 
@@ -241,23 +233,24 @@ BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
 
 * This is essentially a test system with data already placed inside it.  This can be done easily with the following steps:
 
-#### 1.  Start an image using the -e LOCAL=true
+### OPTION 1
+### 1.  Start an image using the -e STORAGE=local
 
 ```shell
-      docker run --name ifx -e LOCAL=true            \
-            -p 9088:9088 -p 9089:9089 -p 27017:27017 \
+      docker run --name ifx -h ifx -e STORAGE=local            \
+            -p 9088:9088 -p 9089:9089 -p 27017:27017    \
             -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
 
-#### 2.  Create databases/tables.  Modify chunks/dbspaces, etc.
+### 2.  Create databases/tables.  Modify chunks/dbspaces, etc.
 
-#### 3.  Bring the Informix instance offline.  Within the Container run:
+### 3.  Bring the Informix instance offline.  Within the Container run:
 
 ```shell
       onmode -ky
 ```
 
-#### 4.  Commit the container to a new image.  On the host run:
+### 4.  Commit the container to a new image.  On the host run:
 
 ```shell
             docker commit ifx ifx-test:v1 
@@ -266,19 +259,36 @@ BUFFERPOOL=ADD:size=4k,buffers=100000,lrus=8,lru_min_dirty=50,lru_max_dirty=60
 * Now you have a new __Docker image__ named ifx-test:v1 that you can run that will contain your databases/tables, chunk/dbspace layout all stored inside the container.  To run this you would run the following:
 
 ```shell
-      docker run --name ifx                          \
+      docker run --name ifx -h ifx                   \
             -p 9088:9088 -p 9089:9089 -p 27017:27017 \
             -p 27018:27018 -p 27883:27883 ifx-test:v1
 ```
 
 
+### OPTION 2
+
+* Option #1 will configure the system for you and use local storage.  If you want full control to setup the system you can do the following:
+
+### 1.  Start an image using the -e CONFIGURE_INIT=no
+
+```shell
+      docker run --name ifx -h ifx 
+            -e CONFIGURE_INIT=no            \
+            ibmcom/informix-developer-database:latest 
+```
+
+### 2.  Start an image using the -e CONFIGURE_INIT=no
+
+* This file controls the startup of the container.  Modify this accordingly.  This file will start the Informix server and the Wire Listener.
+
+### 3.  Follow the rest of the steps from OPTION 1 for a Custom System
 
 ## 9 - Example docker run commands:
 
 * Default run command with no additional options.  This method stores the Informix dbspaces in an unnamed volume.
 
 ```shell
-docker run -it --name ifx --privileged 
+docker run -it --name ifx -h ifx  
       -p 9088:9088                                  \
       -p 9089:9089                                  \
       -p 27017:27017                                \ 
@@ -291,7 +301,7 @@ docker run -it --name ifx --privileged
 * Run command that uses external (host) directory __(-v /home/informix/extvol:opt/ibm/data)__ for volume storage, and configures the system for oltp __(-e TYPE=oltp)__.
 
 ```shell
-docker run -it --name ifx --privileged 
+docker run -it --name ifx -h ifx  
       -p 9088:9088                                  \
       -p 9089:9089                                  \
       -p 27017:27017                                \ 
@@ -306,7 +316,7 @@ docker run -it --name ifx --privileged
 * Run command that uses external (host) directory for volume storage, and configures the system for oltp.  This command limits the container to 4 cpus __(--cpus="4")__ and the memory to 4gb __(--memory="4000m")__.  
 
 ```shell
-docker run -it --name ifx --privileged 
+docker run -it --name ifx -h ifx  
       --cpus="4" --memory="4000m"                   \ 
       -p 9088:9088                                  \
       -p 9089:9089                                  \
@@ -328,8 +338,8 @@ The Dockerfile and associated scripts are licensed under the [Apache License 2.0
 ## Community Support
 - [IBM developerWorks](https://developer.ibm.com/answers/search.html?q=informix) 
 - [International Informix Users Group](http://members.iiug.org/forums/ids)
-- [Stack Overflow](https://developer.ibm.com/answers/search.html?q=informix) 
-- [LinkedIn](https://www.linkedin.com/groups/25049)
+- [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=informix)
+- [IBM Informix Community](https://community.ibm.com/community/user/hybriddatamanagement/communities/community-home?communitykey=cf5a1f39-c21f-4bc4-9ec2-7ca108f0a365&tab=groupdetails)
 
 
 
