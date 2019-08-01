@@ -26,10 +26,9 @@ Informix Developer Edition provides the following:
 
 
 
-
 ## License
 
-The Dockerfile and associated scripts are licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). Informix Developer Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Developer Edition can be found [online](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/DB4F392B782CB8C7852582CD00635BB9?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
+The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are associated scripts and licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). Informix Developer Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Developer Edition can be found [online](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/DB4F392B782CB8C7852582CD00635BB9?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
 
 
 ## Community Support
@@ -41,3 +40,4 @@ The Dockerfile and associated scripts are licensed under the [Apache License 2.0
 
 
 ## Like this image?  Give us a star at the top of this page!  
+
