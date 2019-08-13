@@ -237,7 +237,7 @@ To use  ```user supplied configuration files``` you must use a bind mount and mo
 ### 1.  Start an image using the -e STORAGE=local
 
 ```shell
-      docker run --name ifx -h ifx -e STORAGE=local            \
+      docker run --name ifx -h ifx -e LICENSE=accept -e STORAGE=local      \
             -p 9088:9088 -p 9089:9089 -p 27017:27017    \
             -p 27018:27018 -p 27883:27883 ibmcom/informix-developer-database:latest 
 ```
@@ -259,7 +259,7 @@ To use  ```user supplied configuration files``` you must use a bind mount and mo
 * Now you have a new __Docker image__ named ifx-test:v1 that you can run that will contain your databases/tables, chunk/dbspace layout all stored inside the container.  To run this you would run the following:
 
 ```shell
-      docker run --name ifx -h ifx                   \
+      docker run --name ifx -h ifx -e LICENSE=accpet -e STORAGE=local      \
             -p 9088:9088 -p 9089:9089 -p 27017:27017 \
             -p 27018:27018 -p 27883:27883 ifx-test:v1
 ```
