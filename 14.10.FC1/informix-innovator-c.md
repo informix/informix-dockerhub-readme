@@ -32,6 +32,7 @@ This docker image contains pre-deployed Informix Innovator-C Edition.  The docke
 
 If you have requirements that exceed these you can use the __Github__ [Dockerfiles Repo](https://github.com/informix/informix-server-dockerfiles) to build your own Docker image.
 
+The default password for user ```informix``` is ```in4mix```, for ```root``` access informix has sudo privileges.
 
 ## Table of Conents
 ```shell
