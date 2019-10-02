@@ -15,8 +15,6 @@ This docker image has to be deployed to Docker Engine on one of supported Cloud 
 
 In order to use the image, it is necessary to accept the terms of the Informix license. This is achieved by specifying the environment variable LICENSE equal to accept when running the image.
 
-This docker image contains pre-deployed Informix Developer Edition. 
-
 
 
 1 - Starting the Sandbox Docker Container for the First time.
