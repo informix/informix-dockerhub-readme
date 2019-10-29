@@ -52,7 +52,7 @@ The default password for user ```informix``` is ```in4mix```, for ```root``` acc
 ## 1 - Starting an Informix Docker Container for the First time.
 
 ```shell
-docker run -it --name ifx -h ifx--privileged -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 \
+docker run -it --name ifx -h ifx --privileged -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 \
 -p 27883:27883 -e LICENSE=accept ibmcom/informix-developer-database:latest
 ```
 
