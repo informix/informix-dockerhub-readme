@@ -15,12 +15,12 @@ Informix Developer Edition provides the following:
 
 >[IBM Informix Documentation](https://www.ibm.com/support/knowledgecenter/SSGU8G_14.1.0/com.ibm.welcome.doc/welcome.htm)
 
-## Supported tags & Documentation
+## Supported Tags & Documentation
 
 *  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md),
 [14.10.FC5DE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md)
 
-## How to use this image
+## How to Use this Image
 This docker image has to be deployed to Docker Engine on one of supported Cloud providers or your own system. The instructions for creating [Docker Engine](https://docs.docker.com/engine/installation) varies by platform and cloud provider. 
 
 In order to use the image, it is necessary to accept the terms of the Informix Developer Edition license. This is achieved by specifying the environment variable LICENSE equal to accept when running the image.
