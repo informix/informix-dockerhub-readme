@@ -110,7 +110,6 @@ docker run --name ifx -h ifx -e LICENSE=accept -v ifx-vol:/opt/ibm/data \
 
 * __Bind mounts__ can be used, use the -v option and follow these instructions:
 
-
 #### Create Mount Point on Host 
 
 ```
