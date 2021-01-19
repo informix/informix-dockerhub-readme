@@ -1,4 +1,4 @@
-# What is  IBM Informix Innovator-C ?
+# What is IBM Informix Innovator-C Edition?
 
 __IBM Informix Innovator-C__  eliminates the up-front licensing costs of developing popular database functionality for use in production (redistribution requires a separate license). The Innovator-C Edition is available on Linux, Windows and Mac platforms and is limited to one core and 2 GB of memory.
 
