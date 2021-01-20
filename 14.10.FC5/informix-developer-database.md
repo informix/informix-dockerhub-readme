@@ -161,7 +161,7 @@ To use `user supplied configuration files` you must use a bind mount and mount t
       -e SQLHOSTS_FILE=sqlhosts
 ```
 
-* __User Supplied sch_init_xxxxx.sql__ You can specify an __sch_init_xxxxx.sql__ file to be used by placing the file in hosts directory that is mounted to the __config volume__.  You need to replace __xxxxx__ with the instance name, i.e. the name put as `DBSERVERNAME`. In the example above it would be __/home1/setupvol__.  This file is used during startup to perform additional initialization options, e.g. the creation of dbspaces, databases, etc.  Use the `-e` option to specify the file name.
+* __User Supplied sch_init_xxxxx.sql__ You can specify an __sch_init_xxxxx.sql__ file to be used by placing the file in hosts directory that is mounted to the __config volume__.  In the example above it would be __/home1/setupvol__.  This file is used during startup to perform additional initialization options, e.g. the creation of dbspaces, databases, etc.  Use the `-e` option to specify the file name. You will need to replace __xxxxx__ with the instance name, i.e. the name set as `DBSERVERNAME`.
 
 ```
       -e INIT_FILE=my_init.sql
