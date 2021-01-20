@@ -10,7 +10,7 @@ The Informix Innovator-C Edition on Dockerhub is not designed for production use
 
 >[IBM Informix Family](http://www-03.ibm.com/software/products/en/informix-family)
 
->[IBM Informix Innovator-C Edition ](http://www-03.ibm.com/software/products/en/infoinnoedit)
+>[IBM Informix Innovator-C Edition ](https://www.ibm.com/products/informix/editions?lnk=STW_US_STESCH_&lnk2=learn_InformixDev&pexp=DEF&psrc=NONE&mhsrc=ibmsearch_a&mhq=informix%20developer%20edition)
 
 >[IBM Elite Support](http://www-01.ibm.com/support/docview.wss?rs=630&uid=swg21431136)
 

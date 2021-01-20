@@ -11,7 +11,7 @@ Informix Developer Edition provides the following:
 
 >[IBM Informix Family](http://www.ibm.com/analytics/us/en/technology/informix)
 
->[IBM Informix Developer Edition](http://www-03.ibm.com/software/products/en/infodeveedit)
+>[IBM Informix Developer Edition](https://www.ibm.com/products/informix/editions?lnk=STW_US_STESCH_&lnk2=learn_InformixDev&pexp=DEF&psrc=NONE&mhsrc=ibmsearch_a&mhq=informix%20developer%20edition)
 
 >[IBM Informix Documentation](https://www.ibm.com/support/knowledgecenter/SSGU8G_12.1.0/com.ibm.welcome.doc/welcome.htm)
 
