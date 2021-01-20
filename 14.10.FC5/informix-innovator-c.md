@@ -17,8 +17,7 @@ The Informix Innovator-C Edition on Dockerhub is not designed for production use
 
 ## Supported tags & Documentation
 
-*  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-innovator-c.md),
-[14.10.FC5](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-innovator-c.md),
+* [14.10.FC5IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-innovator-c.md)
 
 
 ## How to Use this Image

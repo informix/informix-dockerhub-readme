@@ -6,8 +6,8 @@ __IBM Informix Developer Edition__ is free database software for application dev
 Informix Developer Edition provides the following: 
 
 * __All Informix Enterprise Edition features__ on a variety of platforms.
-* __Data access simplified__  via SQL APIs (JDBC,ODBC,.NET), MongoDB APIs, REST API and MQTT API.
-* __Web development made easy__  in LAMP, MEAN or other development frameworks. 
+* __Data access simplified__ via SQL APIs (JDBC,ODBC,.NET), MongoDB APIs, REST API and MQTT API.
+* __Web development made easy__ in LAMP, MEAN or other development frameworks. 
 
 >[IBM Informix Family](http://www.ibm.com/analytics/us/en/technology/informix)
 
@@ -17,17 +17,16 @@ Informix Developer Edition provides the following:
 
 ## Supported Tags & Documentation
 
-*  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md),
-[14.10.FC5DE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md)
+* [14.10.FC5DE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md)
 
 ## How to Use this Image
 This docker image has to be deployed to Docker Engine on one of supported Cloud providers or your own system. The instructions for creating [Docker Engine](https://docs.docker.com/engine/installation) varies by platform and cloud provider. 
 
 In order to use the image, it is necessary to accept the terms of the Informix Developer Edition license. This is achieved by specifying the environment variable LICENSE equal to accept when running the image.
 
-This docker image contains pre-deployed Informix Developer Edition.  The docker images we have stored on __Dockerhub__ are not intended for production purposes and may be have specific functionality removed from the installation directory.
+This docker image contains a pre-deployed Informix Developer Edition.  The docker images we have stored on __Dockerhub__ are not intended for production purposes and may be have specific functionality removed from the installation directory.
 
-The default password for user ```informix``` is ```in4mix```, for ```root``` access informix has sudo privileges.
+The default password for user `informix` is `in4mix`, for `root` access informix has sudo privileges.
 
 ## Table of Conents
 
@@ -99,6 +98,7 @@ docker volume create ifx-vol
 ```
 
 #### Run with a Named Volume
+
 ```
 docker run --name ifx -h ifx -e LICENSE=accept -v ifx-vol:/opt/ibm/data \
     -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 \
@@ -108,7 +108,6 @@ docker run --name ifx -h ifx -e LICENSE=accept -v ifx-vol:/opt/ibm/data \
 ### Bind Mount
 
 * __Bind mounts__ can be used, use the -v option and follow these instructions:
-
 
 #### Create Mount Point on Host 
 
