@@ -8,33 +8,33 @@ The Informix Innovator-C Edition on Dockerhub however is not designed for produc
 * __Automated backup and restore__ eliminates many manual tasks.
 * __Selected support at Elite level__ is available as an optional purchase.
 
->[IBM Informix Family](http://www-03.ibm.com/software/products/en/informix-family)
+>[IBM Informix Family](https://www-03.ibm.com/software/products/en/informix-family)
 
 >[IBM Informix Innovator-C Edition ](https://www.ibm.com/products/informix/editions?lnk=STW_US_STESCH_&lnk2=learn_InformixDev&pexp=DEF&psrc=NONE&mhsrc=ibmsearch_a&mhq=informix%20developer%20edition)
 
->[IBM Elite Support](http://www-01.ibm.com/support/docview.wss?rs=630&uid=swg21431136)
+>[IBM Elite Support](https://www-01.ibm.com/support/docview.wss?rs=630&uid=swg21431136)
 
 ## Supported tags & Documentation
 
-*  [latest](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
-[14.10.FC5IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-innovator-c.md),
-[14.10.FC4IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
-[14.10.FC3IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
-[14.10.FC2IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
-[14.10.FC1IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
-[12.10.UC12W1IE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC12/informix-innovator-c.md),
-[12.10.UC11IE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md),
-[12.10.UC10IE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md),
-[12.10.UC9W1IE](http://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md)
+*  [latest](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
+[14.10.FC5IE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-innovator-c.md),
+[14.10.FC4IE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
+[14.10.FC3IE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
+[14.10.FC2IE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
+[14.10.FC1IE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-innovator-c.md),
+[12.10.UC12W1IE](https://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC12/informix-innovator-c.md),
+[12.10.UC11IE](https://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md),
+[12.10.UC10IE](https://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md),
+[12.10.UC9W1IE](https://github.com/informix/informix-dockerhub-readme/blob/master/12.10.FC9/informix-innovator-c.md)
 
 ## License
 
-The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are associated scripts and licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). Informix Innovator-C Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Innovator-C Edition can be found [online](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/1DF201E9D7EC396D85258638008308E0?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
+The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are associated scripts and licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Informix Innovator-C Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Innovator-C Edition can be found [online](https://www-03.ibm.com/software/sla/sladb.nsf/displaylis/1DF201E9D7EC396D85258638008308E0?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
 
 ## Community Support
 
 - [IBM developerWorks](https://developer.ibm.com/answers/search.html?q=informix) 
-- [International Informix Users Group](http://members.iiug.org/forums/ids)
+- [International Informix Users Group](https://members.iiug.org/forums/ids)
 - [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=informix)
 - [IBM Informix Community](https://community.ibm.com/community/user/hybriddatamanagement/communities/community-home?communitykey=cf5a1f39-c21f-4bc4-9ec2-7ca108f0a365&tab=groupdetails)
 
