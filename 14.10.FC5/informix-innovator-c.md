@@ -203,7 +203,7 @@ To use `user supplied configuration files` you must use a bind mount and mount t
 
 ### License Option
 
-* By specifying `-e LICENSE=accept` parameter, you are accepting this [License](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/4BBCF42D722EB70685257D8F007B6A44?OpenDocument)  to use the software contained in this image.
+* By specifying `-e LICENSE=accept` parameter, you are accepting this [License](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/1DF201E9D7EC396D85258638008308E0?OpenDocument) to use the software contained in this image.
 
 ### Terminal Options
 
@@ -318,16 +318,12 @@ docker run -it --name ifx -h ifx                    \
 ```
 ## License
 
-The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are associated scripts and licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). Informix Innovator-C Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Innovator-C Edition can be found [online](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/AFFA2E7CE59C3C72852582CD00635748?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
-
-
+The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are associated scripts and licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0). Informix Innovator-C Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Innovator-C Edition can be found [online](http://www-03.ibm.com/software/sla/sladb.nsf/displaylis/1DF201E9D7EC396D85258638008308E0?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
 
 ## Community Support
 - [IBM developerWorks](https://developer.ibm.com/answers/search.html?q=informix) 
 - [International Informix Users Group](http://members.iiug.org/forums/ids)
 - [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=informix)
 - [IBM Informix Community](https://community.ibm.com/community/user/hybriddatamanagement/communities/community-home?communitykey=cf5a1f39-c21f-4bc4-9ec2-7ca108f0a365&tab=groupdetails)
-
-
 
 ## Like this image?  Give us a star at the top of this page!  
