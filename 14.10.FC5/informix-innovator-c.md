@@ -14,20 +14,18 @@ The Informix Innovator-C Edition on Dockerhub is not designed for production use
 
 >[IBM Elite Support](http://www-01.ibm.com/support/docview.wss?rs=630&uid=swg21431136)
 
-
 ## Supported tags & Documentation
 
 * [14.10.FC5IE](http://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-innovator-c.md)
 
-
 ## How to Use this Image
 This docker image has to be deployed to Docker Engine on one of supported Cloud providers or your own system. The instructions for creating [Docker Engine](https://docs.docker.com/engine/installation) varies by platform and cloud provider. 
 
-In order to use the image, it is necessary to accept the terms of the Informix Developer Edition license. This is achieved by specifying the environment variable LICENSE equal to accept when running the image.
+In order to use the image, it is necessary to accept the terms of the Informix Developer Edition license. This is achieved by specifying the environment variable `LICENSE` equal to accept when running the image.
 
 This docker image contains pre-deployed Informix Developer Edition.  The docker images we have stored on __Dockerhub__ are not intended for production purposes and may be have specific functionality removed from the installation directory.
 
-The default password for user ```informix``` is ```in4mix```, for ```root``` access informix has sudo privileges.
+The default password for user `informix` is `in4mix`, for `root` access informix has sudo privileges.
 
 ## Table of Conents
 
