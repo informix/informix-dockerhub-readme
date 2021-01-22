@@ -8,7 +8,7 @@ The Informix Innovator-C Edition on Dockerhub however is not designed for produc
 * __Automated backup and restore__ eliminates many manual tasks.
 * __Selected support at Elite level__ is available as an optional purchase.
 
->[IBM Informix Family](https://www-03.ibm.com/software/products/en/informix-family)
+>[IBM Informix Family](https://www.ibm.com/products/informix)
 
 >[IBM Informix Innovator-C Edition ](https://www.ibm.com/products/informix/editions?lnk=STW_US_STESCH_&lnk2=learn_InformixDev&pexp=DEF&psrc=NONE&mhsrc=ibmsearch_a&mhq=informix%20developer%20edition)
 
@@ -34,7 +34,7 @@ The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are a
 ## Community Support
 
 - [IBM developerWorks](https://developer.ibm.com/answers/search.html?q=informix) 
-- [International Informix Users Group](https://members.iiug.org/forums/ids)
+- [International Informix Users Group](https://www.iiug.org/en/home/)
 - [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=informix)
 - [IBM Informix Community](https://community.ibm.com/community/user/hybriddatamanagement/communities/community-home?communitykey=cf5a1f39-c21f-4bc4-9ec2-7ca108f0a365&tab=groupdetails)
 
