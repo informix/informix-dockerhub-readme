@@ -319,7 +319,7 @@ docker run -it --name ifx -h ifx                    \
 
 ## License
 
-The [Dockerfiles](https://github.com/informix/informix-server-dockerfiles) are associated scripts and licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Informix Developer Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Developer Edition can be found [online](https://www-03.ibm.com/software/sla/sladb.nsf/displaylis/E6CCE19CC63592A6852586380082EEA2?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
+The Dockerfiles are associated scripts and licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Informix Developer Edition is licensed under the IBM International License Agreement for Non-Warranted Programs. This license for Informix Developer Edition can be found [online](https://www-03.ibm.com/software/sla/sladb.nsf/displaylis/E6CCE19CC63592A6852586380082EEA2?OpenDocument) for the software contained in this image. Note that this license does not permit further distribution.
 
 ## Community Support
 - [IBM developerWorks](https://developer.ibm.com/answers/search.html?q=informix) 
