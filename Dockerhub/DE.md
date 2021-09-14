@@ -17,7 +17,8 @@ Informix Developer Edition provides the following:
 
 ## Supported tags & Documentation
 
-* [latest](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md),
+* [latest](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC6/informix-developer-database.md),
+[14.10.FC6DE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC6/informix-developer-database.md),
 [14.10.FC5DE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md),
 [14.10.FC4DE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-developer-database.md),
 [14.10.FC3DE](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC1/informix-developer-database.md),
