@@ -36,7 +36,7 @@ If you have requirements that exceed these you can use the __Github__ [Dockerfil
 
 The default password for user ```informix``` is ```in4mix```, for ```root``` access informix has sudo privileges.
 
-## Table of Conents
+## Table of Contents
 ```shell
 1 - Running docker container
 2 - Starting a docker container
