@@ -17,7 +17,7 @@ Informix Developer Edition provides the following:
 
 ## Supported Tags & Documentation
 
-* [15.0.0.0](https://github.com/informix/informix-dockerhub-readme/blob/master/15.0.0.0/informix-developer-database.md)
+* [15.0.0.0](https://github.com/informix/informix-dockerhub-readme/blob/master/15.0.0.0/informix-developer-edition-database.md)
 
 ## How to Use this Image
 This docker image has to be deployed to Docker Engine on one of supported Cloud providers or your own system. The instructions for creating [Docker Engine](https://docs.docker.com/engine/installation) varies by platform and cloud provider. 
@@ -45,7 +45,7 @@ The default password for user `informix` is `in4mix`, for `root` access informix
 ```
 docker run -it --name ifx -h ifx --privileged -e LICENSE=accept \
     -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 \
-    ibmcom/informix-developer-database:latest
+    ibmcom/informix-developer-edition-database:latest
 ```
 
 * The `docker run` command will perform a disk initialization for the Informix Database Server.  When you exit this shell the server will be taken offline.
@@ -102,7 +102,7 @@ docker volume create ifx-vol
 ```
 docker run --name ifx -h ifx -e LICENSE=accept -v ifx-vol:/opt/ibm/data \
     -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 \
-    ibmcom/informix-developer-database:latest 
+    ibmcom/informix-developer-edition-database:latest 
 ```
 
 ### Bind Mount
@@ -120,7 +120,7 @@ mkdir /home/informix/extvol
 ```
 docker run --name ifx -h ifx -e LICENSE=accept -v /home/informix/extvol:/opt/ibm/data \
     -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 \
-    ibmcom/informix-developer-database:latest 
+    ibmcom/informix-developer-edition-database:latest 
 ```
 
 ### Local Storage 
@@ -136,7 +136,7 @@ docker run --name ifx -h ifx -e LICENSE=accept -v /home/informix/extvol:/opt/ibm
 ```
 docker run --name ifx -h ifx -e STORAGE=local -e LICENSE=accept \
     -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 \
-    ibmcom/informix-developer-database:latest 
+    ibmcom/informix-developer-edition-database:latest 
 ```
 
 ## 6. User Supplied Configuration Options
@@ -223,7 +223,7 @@ To use `user supplied configuration files` you must use a bind mount and mount t
 ```
 docker run --name ifx -h ifx -e LICENSE=accept -e STORAGE=local \
     -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 \
-    ibmcom/informix-developer-database:latest 
+    ibmcom/informix-developer-edition-database:latest 
 ```
 
 #### 2. Create databases/tables.  Modify chunks/dbspaces, etc.
@@ -257,7 +257,7 @@ docker run --name ifx -h ifx -e LICENSE=accpet -e STORAGE=local \
 ```
 docker run --name ifx -h ifx \
     -e CONFIGURE_INIT=no \
-    ibmcom/informix-developer-database:latest 
+    ibmcom/informix-developer-edition-database:latest 
 ```
 #### 2.  Start an image using `-e CONFIGURE_INIT=my_init.sh`
 
@@ -283,7 +283,7 @@ docker run -it --name ifx -h ifx                    \
       -p 27018:27018                                \
       -p 27883:27883                                \
       -e LICENSE=accept                             \
-      ibmcom/informix-developer-database:latest
+      ibmcom/informix-developer-edition-database:latest
 ```
 
 * Run command that uses external (host) directory __`-v /home/informix/extvol:opt/ibm/data`__ for volume storage, and configures the system for oltp __`-e TYPE=oltp`__.
@@ -298,7 +298,7 @@ docker run -it --name ifx -h ifx                    \
       -v /home/informix/extvol:/opt/ibm/data        \
       -e TYPE=oltp                                  \
       -e LICENSE=accept                             \
-      ibmcom/informix-developer-database:latest
+      ibmcom/informix-developer-edition-database:latest
 ```
 
 * Run command that uses external (host) directory for volume storage, and configures the system for oltp.  This command limits the container to 4 cpus __`--cpus="4"`__ and the memory to 4gb __`--memory="4000m"`__.
@@ -314,7 +314,7 @@ docker run -it --name ifx -h ifx                    \
       -v /home/informix/extvol:/opt/ibm/data        \
       -e TYPE=oltp                                  \
       -e LICENSE=accept                             \
-      ibmcom/informix-developer-database:latest
+      ibmcom/informix-developer-edition-database:latest
 ```
 
 ## License
