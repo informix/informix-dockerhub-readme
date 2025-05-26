@@ -11,7 +11,7 @@ The following table describes the available docker images. Click on the version 
 
 | Version | Registry | URL | Image digest |
 | :------- | :------ | :-------  | :------- |
-[15.0.0.0 ](https://github.com/informix/informix-dockerhub-readme/blob/master/15.0.0.0/informix-developer-database.md)| icr.io |icr.io/informix/informix-developer-database:15.0.0.0     |  sha256:f27fa57739c1a0e36f070ce16c41435c51a75b27b72abe1ee432717f7beea609
+[15.0.0.0 ](https://github.com/informix/informix-dockerhub-readme/blob/master/15.0.0.0/informix-developer-edition-database.md)| icr.io |icr.io/informix/informix-developer-edition-database:15.0.0.0     |  sha256:f27fa57739c1a0e36f070ce16c41435c51a75b27b72abe1ee432717f7beea609
 [14.10.FC9W1 ](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC9W1/informix-developer-database.md)| icr.io |icr.io/informix/informix-developer-database:14.10.FC9W1DE     |  sha256:5eb0d519188d1c5d655775343974cec2063244b7a0f60b4e4dda8809ca9b376e
 [14.10.FC7W1 ](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC7W1/informix-developer-database.md)| docker.io |ibmcom/informix-developer-database:14.10.FC7W1DE   |  sha256:069febf6b08d72866ad8d7b06c1caf190df423f7b407de1ce18e3d89a8f8803d
 [14.10.FC5   ](https://github.com/informix/informix-dockerhub-readme/blob/master/14.10.FC5/informix-developer-database.md)| docker.io |ibmcom/informix-developer-database:14.10.FC5DE     |  sha256:cec3c0c42e996e85da8109197d760ac45ca2d7cd03a9ba9b44984d4a5d780830
